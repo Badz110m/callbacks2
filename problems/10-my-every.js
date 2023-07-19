@@ -6,6 +6,20 @@ the array return true when passed into the callback.
 Do not use the built in Array.every.
 
 Examples:
+*******************************************************************************/
+
+function myEvery(array, cb) {
+    //let counter = 0;
+    // let newArr = [];
+    for(let element of array) {
+        if(!cb(element)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+// console.log(myEvery([4, 7, 6, 10], isEven));            // false
 
 let isEven = function (num) {
     return num % 2 === 0;
@@ -19,11 +33,6 @@ console.log(myEvery([4, 8, 6, 10], isEven));            // true
 console.log(myEvery([4, 7, 6, 10], isEven));            // false
 console.log(myEvery(['book', 'door'], hasO));           // true
 console.log(myEvery(['book', 'door', 'pen'], hasO));    // false
-*******************************************************************************/
-
-function myEvery(array, cb) {
-    // Your code here
-}
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {
