@@ -4,33 +4,38 @@ The function should call the callback for each element of the array, passing in
 the element. The function should return true if all
 elements of the array result to false when passed into the callback. Otherwise,
 the method should return false.
-
-Examples:
-
-let result1 = none(['ruby', 'topaz', 'opal'], function(w) {
-    return w.includes('e');
-});
-console.log(result1);   // true
-
-let result2 = none(['ruby', 'topaz', 'sapphire', 'opal'], function(w) {
-    return w.includes('e');
-});
-console.log(result2);   // false
-
-let result3 = none([4, 5, 7, 1], function(n) {
-    return n < 0;
-});
-console.log(result3);   // true
-
-let result4 = none([4, -5, 7, -1], function(n) {
-    return n < 0;
-});
-console.log(result4);   // false
 *******************************************************************************/
+//INPUT: array, callback
+//OUTPUT: return boolean: does callback return false for all elements?
+// array.map(cb) > .includes(true)    should be false
+// function none(array, cb) {
+//   return !array.map(cb).includes(true);
+// }
 
+//using .filter, check for empty array
 function none(array, cb) {
-  // Your code here
+  return array.filter(cb).length === 0;   //again, setting it as === [] doesn't work.
 }
+
+// let result1 = none(['ruby', 'topaz', 'opal'], function(w) {
+//   return w.includes('e');
+// });
+// console.log(result1);   // true
+
+// let result2 = none(['ruby', 'topaz', 'sapphire', 'opal'], function(w) {
+//   return w.includes('e');
+// });
+// console.log(result2);   // false
+
+// let result3 = none([4, 5, 7, 1], function(n) {
+//   return n < 0;
+// });
+// console.log(result3);   // true
+
+// let result4 = none([4, -5, 7, -1], function(n) {
+//   return n < 0;
+// });
+// console.log(result4);   // false
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {
